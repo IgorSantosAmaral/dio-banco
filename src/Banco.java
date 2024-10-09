@@ -11,22 +11,6 @@ public class Banco {
         this.contas = new ArrayList<>();
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public List<Conta> getContas() {
-        return contas;
-    }
-
-    public void setContas(List<Conta> contas) {
-        this.contas = contas;
-    }
-
     public void adicionarConta(Conta conta) {
         this.contas.add(conta);
     }
@@ -35,11 +19,11 @@ public class Banco {
         System.out.println("=== " + nome + " ===");
         System.out.println("=== Lista de Contas ===");
         for (Conta conta : contas) {
-            System.out.println(String.format("Titular: %s, Tipo: %s, Número: %d, Saldo: %.2f",
+            System.out.printf("Titular: %s, Tipo: %s, Número: %d, Saldo: %.2f%n",
                     conta.getCliente().getNome(),
                     conta instanceof ContaCorrente ? "Conta Corrente" : "Conta Poupança",
                     conta.getNumero(),
-                    conta.getSaldo()));
+                    conta.getSaldo());
         }
     }
 
